@@ -24,61 +24,76 @@
 
 };
 
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        serif: ['Playfair Display', 'serif'],
-                        sans: ['Plus Jakarta Sans', 'sans-serif'],
-                    },
-                    colors: {
-                        lienzo: '#FDFBF7',
-                        beigeBase: '#F5F2EB',
-                        terracota: {
-                            50: '#FFF7ED',
-                            700: '#C2410C',
-                            900: '#7C2D12',
-                        },
-                        musgo: {
-                            100: '#F0FDF4',
-                            700: '#4D7C0F',
-                            950: '#1A2E05',
-                        }
-                    }
+tailwind.config = {
+    theme: {
+        extend: {
+            fontFamily: {
+                serif: ['Playfair Display', 'serif'],
+                sans:  ['Plus Jakarta Sans', 'sans-serif'],
+            },
+            colors: {
+                lienzo:    '#FDFBF7',
+                beigeBase: '#F5F2EB',
+                terracota: {
+                    50:  '#FFF7ED',
+                    100: '#FFEDD5',
+                    700: '#C2410C',
+                    800: '#9A3412',
+                    900: '#7C2D12',
+                },
+                musgo: {
+                    100: '#F0FDF4',
+                    700: '#4D7C0F',
+                    950: '#1A2E05',
                 }
             }
         }
-    
-document.getElementById('lang-toggle').addEventListener('click', function() {
-    document.querySelectorAll('[data-en]').forEach(el => {
-        let temp = el.innerText;
-        el.innerText = el.getAttribute('data-en');
-        el.setAttribute('data-en', temp);
-    });
-});
+    }
+};
+
 
 document.addEventListener('DOMContentLoaded', function () {
-    var offcanvasEl = document.getElementById('menuMobile');
-    var bsOffcanvas = bootstrap.Offcanvas.getOrCreateInstance(offcanvasEl);
 
-    document.querySelectorAll('#offcanvas-nav a').forEach(function (link) {
-        link.addEventListener('click', function (e) {
-            e.preventDefault();
-            var target = document.querySelector(this.getAttribute('href'));
-            bsOffcanvas.hide();
-            offcanvasEl.addEventListener('hidden.bs.offcanvas', function handler() {
-                if (target) target.scrollIntoView({ behavior: 'smooth' });
-                offcanvasEl.removeEventListener('hidden.bs.offcanvas', handler);
-            });
-        });
+    var isEN = false;
+
+    /* Guardar texto español original */
+    document.querySelectorAll('[data-en]').forEach(function (el) {
+        if (!el.dataset.es) el.dataset.es = el.innerText.trim();
     });
 
-   
-    var langMain   = document.getElementById('lang-toggle');
-    var langMobile = document.getElementById('lang-toggle-mobile');
-    if (langMobile && langMain) {
-        langMobile.addEventListener('click', function () {
-            langMain.click();
+    function traducir() {
+        document.querySelectorAll('[data-en]').forEach(function (el) {
+            el.innerText = isEN ? el.dataset.en : el.dataset.es;
+        });
+        var label = isEN ? 'EN / ES' : 'ES / EN';
+        var b1 = document.getElementById('lang-toggle');
+        var b2 = document.getElementById('lang-toggle-mobile');
+        if (b1) b1.innerText = label;
+        if (b2) b2.innerText = label;
+    }
+
+    function toggle() { isEN = !isEN; traducir(); }
+
+    var b1 = document.getElementById('lang-toggle');
+    var b2 = document.getElementById('lang-toggle-mobile');
+    if (b1) b1.addEventListener('click', toggle);
+    if (b2) b2.addEventListener('click', toggle);
+
+    /* ── Menú móvil offcanvas ── */
+    var offcanvasEl = document.getElementById('menuMobile');
+    if (offcanvasEl && typeof bootstrap !== 'undefined') {
+        var bsOffcanvas = bootstrap.Offcanvas.getOrCreateInstance(offcanvasEl);
+
+        document.querySelectorAll('#offcanvas-nav a').forEach(function (link) {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                var target = document.querySelector(this.getAttribute('href'));
+                bsOffcanvas.hide();
+                offcanvasEl.addEventListener('hidden.bs.offcanvas', function handler() {
+                    if (target) target.scrollIntoView({ behavior: 'smooth' });
+                    offcanvasEl.removeEventListener('hidden.bs.offcanvas', handler);
+                });
+            });
         });
     }
 });
