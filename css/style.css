@@ -288,3 +288,10 @@
 @media (max-width: 1279px) {
     #btn-hamburguesa { display: block !important; }
 }
+
+ @media (min-width: 576px) {
+                            #card-foto {
+                                transform: rotate(-1deg) !important;
+                            }
+                        }
+                    
