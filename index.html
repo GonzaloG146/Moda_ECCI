@@ -8,18 +8,31 @@
     <title>Sara Viloria | Artes Visuales e Ilustración Territorial | Portafolio</title>
 
 
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="css/style.css"
-        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght=300;400;500;600&family=Playfair+Display:ital,wght=0,500;0,600;1,400&display=swap"
-        rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,400&display=swap">
 
-
+   
     <script src="https://cdn.tailwindcss.com"></script>
+
+  
+    <link rel="stylesheet" href="css/style.css">
+
+   
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
     
 
 
 </head>
+
+<body>
+
 <header class="fixed top-0 w-full bg-lienzo/90 backdrop-blur-md z-50 border-b border-terracota-900/5">
     <div class="flex items-center justify-between h-20 px-8 w-full">
 
@@ -28,29 +41,56 @@
             <span class="block text-[10px] tracking-widest uppercase text-musgo-700 font-medium"
                 data-en="Visual Arts & Territory">Artes Visuales & Territorio</span>
         </div>
-<nav class="hidden xl:flex space-x-6 text-[10px] font-semibold uppercase tracking-wider text-musgo-950">
-    <a href="#sobre-mi" class="hover:text-terracota-700 transition-colors duration-300" data-en="About Me">Sobre Mí</a>
-    <a href="#conferencia-y-color" class="hover:text-terracota-700 transition-colors duration-300" data-en="Conference">Conferencia</a>
-    <a href="#portafolio" class="hover:text-terracota-700 transition-colors duration-300" data-en="Portfolio">Portafolio</a>
-    <a href="#circulo-conceptual" class="hover:text-terracota-700 transition-colors duration-300" data-en="Circle">Círculo</a>
-    <a href="#propiedades-color" class="hover:text-terracota-700 transition-colors duration-300" data-en="Tone and Value">Tono y Valor</a>
-    <a href="#psicologia-color" class="hover:text-terracota-700 transition-colors duration-300" data-en="Psychology">Psicología</a>
-    <a href="#armonias-seccion" class="hover:text-terracota-700 transition-colors duration-300" data-en="Harmony">Armonía</a>
-    <a href="#lenguaje-color" class="hover:text-terracota-700 transition-colors duration-300" data-en="Color Language">El Lenguaje del Color</a>
-    <a href="#atlas-cromatico" class="hover:text-terracota-700 transition-colors duration-300" data-en="Chromatic Atlas">Atlas Cromático</a>
-     <a href="#mi_experencia" class="hover:text-terracota-700 transition-colors duration-300" data-en="Chromatic Atlas">Experencia</a>
-</nav>
-</nav>
-   <div class="flex items-center space-x-2 text-[10px] font-bold text-terracota-900 border-l border-slate-200 pl-4">
-    <button id="lang-toggle" class="hover:underline cursor-pointer transition-all">
-        ES / EN
-    </button>
-</div>
+
+        
+        <nav class="hidden xl:flex space-x-6 text-[10px] font-semibold uppercase tracking-wider text-musgo-950">
+            <a href="#sobre-mi" class="hover:text-terracota-700 transition-colors duration-300" data-en="About Me">Sobre Mí</a>
+            <a href="#conferencia-y-color" class="hover:text-terracota-700 transition-colors duration-300" data-en="Conference">Conferencia</a>
+            <a href="#portafolio" class="hover:text-terracota-700 transition-colors duration-300" data-en="Portfolio">Portafolio</a>
+            <a href="#circulo-conceptual" class="hover:text-terracota-700 transition-colors duration-300" data-en="Circle">Círculo</a>
+            <a href="#propiedades-color" class="hover:text-terracota-700 transition-colors duration-300" data-en="Tone and Value">Tono y Valor</a>
+            <a href="#psicologia-color" class="hover:text-terracota-700 transition-colors duration-300" data-en="Psychology">Psicología</a>
+            <a href="#armonias-seccion" class="hover:text-terracota-700 transition-colors duration-300" data-en="Harmony">Armonía</a>
+            <a href="#lenguaje-color" class="hover:text-terracota-700 transition-colors duration-300" data-en="Color Language">El Lenguaje del Color</a>
+            <a href="#atlas-cromatico" class="hover:text-terracota-700 transition-colors duration-300" data-en="Chromatic Atlas">Atlas Cromático</a>
+            <a href="#mi_experencia" class="hover:text-terracota-700 transition-colors duration-300" data-en="Experience">Experiencia</a>
+        </nav>
+
+        
+        <button class="xl:hidden navbar-toggler border-0 bg-transparent" type="button"
+                data-bs-toggle="offcanvas" data-bs-target="#menuMobile" aria-controls="menuMobile">
+            <i class="bi bi-list text-2xl text-musgo-950"></i>
+        </button>
+
+        <div class="hidden xl:flex items-center space-x-2 text-[10px] font-bold text-terracota-900 border-l border-slate-200 pl-4">
+            <button id="lang-toggle" class="hover:underline cursor-pointer transition-all">
+                ES / EN
+            </button>
+        </div>
+    </div>
 </header>
 
-<body>
 
-   
+<div class="offcanvas offcanvas-end" tabindex="-1" id="menuMobile" aria-labelledby="menuMobileLabel"
+     style="width: 280px;">
+    <div class="offcanvas-header border-bottom">
+        <h5 class="offcanvas-title font-serif text-lg" id="menuMobileLabel">Sara Viloria</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body d-flex flex-column gap-3 pt-4">
+        <a href="#sobre-mi" class="text-decoration-none text-dark fw-semibold small text-uppercase letter-spacing-1" data-bs-dismiss="offcanvas">Sobre Mí</a>
+        <a href="#conferencia-y-color" class="text-decoration-none text-dark fw-semibold small text-uppercase" data-bs-dismiss="offcanvas">Conferencia</a>
+        <a href="#portafolio" class="text-decoration-none text-dark fw-semibold small text-uppercase" data-bs-dismiss="offcanvas">Portafolio</a>
+        <a href="#circulo-conceptual" class="text-decoration-none text-dark fw-semibold small text-uppercase" data-bs-dismiss="offcanvas">Círculo</a>
+        <a href="#propiedades-color" class="text-decoration-none text-dark fw-semibold small text-uppercase" data-bs-dismiss="offcanvas">Tono y Valor</a>
+        <a href="#psicologia-color" class="text-decoration-none text-dark fw-semibold small text-uppercase" data-bs-dismiss="offcanvas">Psicología</a>
+        <a href="#armonias-seccion" class="text-decoration-none text-dark fw-semibold small text-uppercase" data-bs-dismiss="offcanvas">Armonía</a>
+        <a href="#lenguaje-color" class="text-decoration-none text-dark fw-semibold small text-uppercase" data-bs-dismiss="offcanvas">El Lenguaje del Color</a>
+        <a href="#atlas-cromatico" class="text-decoration-none text-dark fw-semibold small text-uppercase" data-bs-dismiss="offcanvas">Atlas Cromático</a>
+        <a href="#mi_experencia" class="text-decoration-none text-dark fw-semibold small text-uppercase" data-bs-dismiss="offcanvas">Experiencia</a>
+        <hr>
+        <button id="lang-toggle-mobile" class="btn btn-outline-secondary btn-sm mt-auto">ES / EN</button>
+    </div>
 </div>
 
 <section class="relative min-h-screen flex items-center pt-20 spot-blend overflow-hidden bg-gradient-full">
@@ -93,9 +133,6 @@
     <div class="mx-4 text-slate-300 font-light text-xs tracking-[0.3em]">***</div>
     <div class="h-px w-32 bg-slate-200"></div>
 </div>
-
-
-</section>
 
 <div class="py-12 flex justify-center items-center">
     <div class="h-px w-32 bg-slate-200"></div>
