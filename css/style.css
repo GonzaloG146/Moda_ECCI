@@ -1,0 +1,269 @@
+/* ==========================
+   ATLAS CROMÁTICO
+========================== */
+
+#atlas-cromatico{
+    background:#F8F5EF;
+    padding:120px 8%;
+    scroll-margin-top:120px;
+}
+
+.glosario-header{
+    text-align:center;
+    margin-bottom:80px;
+}
+
+.glosario-header span{
+    display:block;
+    color:#B65A2A;
+    font-size:12px;
+    font-weight:600;
+    letter-spacing:4px;
+    text-transform:uppercase;
+    margin-bottom:15px;
+}
+
+.glosario-header h2{
+    font-family:'Cormorant Garamond', serif;
+    font-size:4.5rem;
+    font-weight:400;
+    color:#22320F;
+    margin:0;
+}
+
+/* GRID */
+
+.glosario-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:32px;
+}
+
+/* TARJETAS */
+
+.glosario-card{
+    background:#FFFFFF;
+    padding:35px;
+    border-radius:18px;
+    border-top:4px solid #B65A2A;
+    box-shadow:0 8px 25px rgba(0,0,0,0.05);
+    transition:all .35s ease;
+    position:relative;
+    overflow:hidden;
+}
+
+.glosario-card::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:5px;
+    background:linear-gradient(
+        90deg,
+        #B65A2A,
+        #8A9A5B,
+        #647048
+    );
+}
+
+.glosario-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 18px 40px rgba(0,0,0,.10);
+}
+
+.glosario-card h3{
+    font-family:'Cormorant Garamond', serif;
+    font-size:2rem;
+    color:#22320F;
+    margin-bottom:18px;
+    font-weight:500;
+    line-height:1.2;
+}
+
+.glosario-card p{
+    color:#5F6258;
+    line-height:1.9;
+    font-size:15px;
+    margin:0;
+}
+
+/* EFECTO HOVER */
+
+.glosario-card:hover h3{
+    color:#B65A2A;
+}
+
+/* RESPONSIVE */
+
+@media (max-width:1024px){
+
+    .glosario-header h2{
+        font-size:3.5rem;
+    }
+
+}
+
+@media (max-width:768px){
+
+    #atlas-cromatico{
+        padding:80px 6%;
+    }
+
+    .glosario-header h2{
+        font-size:2.7rem;
+    }
+
+    .glosario-grid{
+        grid-template-columns:1fr;
+    }
+
+    .glosario-card{
+        padding:28px;
+    }
+
+    .glosario-card h3{
+        font-size:1.7rem;
+    }
+
+}
+
+
+    
+    [data-en] {
+        transition: opacity 0.3s ease;
+    }
+    
+    
+    #lang-toggle {
+        cursor: pointer;
+        padding: 4px 12px;
+        border: 1px solid currentColor;
+        border-radius: 999px;
+        font-size: 10px;
+        font-weight: 700;
+        text-transform: uppercase;
+        background: transparent;
+        transition: all 0.3s ease;
+    }
+    
+    #lang-toggle:hover {
+        background-color: #3f473c; 
+        color: white;
+    }
+
+.bg-gradient-full {
+        background: linear-gradient(135deg, #faf2e1 0%, #f8f6f6 50%, #e6d8cc 100%);
+    }
+/* Responsive */
+
+@media(max-width:768px){
+
+    .glosario-header h2{
+        font-size:3rem;
+    }
+
+    .glosario-item{
+        grid-template-columns:1fr;
+        gap:20px;
+    }
+
+}
+            @keyframes marquee {
+                0% {
+                    transform: translateX(0);
+                }
+
+                100% {
+                    transform: translateX(-50%);
+                }
+            }
+
+            .animate-marquee {
+                animation: marquee 20s linear infinite;
+            }
+
+            /* Pausar al pasar el mouse */
+            .animate-marquee:hover {
+                animation-play-state: paused;
+            }
+        
+        @keyframes marquee {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-20%);
+            }
+        }
+
+        .animate-marquee {
+            animation: marquee 20s linear infinite;
+        }
+
+        @keyframes spin-slow {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .animate-spin-slow {
+            animation: spin-slow 20s linear infinite;
+        }
+
+        
+.espacio-seccion-especial {
+    margin-block: 6rem; 
+}
+
+.btn-idioma {
+    padding: 0.5rem 1rem;
+    font-size: 0.625rem; /* text-[10px] */
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #475569; /* slate-600 */
+    background: transparent;
+    border: 1px solid #e2e8f0; /* slate-200 */
+    border-radius: 0.5rem; /* rounded-lg */
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-idioma:hover {
+    border-color: #94a3b8; /* slate-400 */
+    color: #1e293b; /* slate-800 */
+    background-color: #f8fafc; /* slate-50 */
+}
+
+.seccion-psicologia {
+    position: relative;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.contenedor-acuarela {
+    position: relative;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.acuarela-estilo {
+    width: 50%;
+    max-width: 400px;
+    height: auto;
+    
+    filter: blur(0,5px) saturate(0,2px);
+ 
+    mix-blend-mode: multiply;
+    
+    opacity: 0.4;
+ 
+    transform: scale(1.4);
+    pointer-events: none;
+}
