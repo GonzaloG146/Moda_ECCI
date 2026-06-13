@@ -267,3 +267,24 @@
     transform: scale(1.4);
     pointer-events: none;
 }
+
+.nav-link-mobile {
+    display: block;
+    padding: 10px 12px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #1c1917;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background 0.2s, color 0.2s;
+}
+.nav-link-mobile:hover, .nav-link-mobile:focus {
+    background: #fdf2ee;
+    color: #7c2d12;
+}
+
+@media (max-width: 1279px) {
+    #btn-hamburguesa { display: block !important; }
+}

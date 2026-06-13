@@ -56,3 +56,29 @@ document.getElementById('lang-toggle').addEventListener('click', function() {
         el.setAttribute('data-en', temp);
     });
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+    var offcanvasEl = document.getElementById('menuMobile');
+    var bsOffcanvas = bootstrap.Offcanvas.getOrCreateInstance(offcanvasEl);
+
+    document.querySelectorAll('#offcanvas-nav a').forEach(function (link) {
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+            var target = document.querySelector(this.getAttribute('href'));
+            bsOffcanvas.hide();
+            offcanvasEl.addEventListener('hidden.bs.offcanvas', function handler() {
+                if (target) target.scrollIntoView({ behavior: 'smooth' });
+                offcanvasEl.removeEventListener('hidden.bs.offcanvas', handler);
+            });
+        });
+    });
+
+   
+    var langMain   = document.getElementById('lang-toggle');
+    var langMobile = document.getElementById('lang-toggle-mobile');
+    if (langMobile && langMain) {
+        langMobile.addEventListener('click', function () {
+            langMain.click();
+        });
+    }
+});
